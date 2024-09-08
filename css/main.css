@@ -1,0 +1,394 @@
+@import "./reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=SUSE:wght@100..800&display=swap');
+
+/*
+font-family: "SUSE", sans-serif;
+font-family: "Roboto", sans-serif;
+  */
+
+  :root {
+    --black: #2C2D31;
+    --blacker: #26272a;
+    --much-blacker: #1e1f21;
+    --white: #FFFFFF;
+    --blue: #579192;
+    --darkblue: #4E6974;
+
+    --navbar-color:var(--blacker);
+    --header-color:var(--black);
+    --footer-color:var(--blacker);
+    --shadow: rgb(178, 178, 178);
+}
+
+.dark {
+    background-color: var(--black);
+    color: var(--white);
+    
+    --navbar-color:var(--much-blacker);
+    --header-color:var(--blacker);
+    --footer-color:var(--much-blacker);
+    --shadow: #454545;
+}
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Roboto", sans-serif;
+    color: var(--black);
+    background-color: var(--white);
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1160px;
+}
+
+/* Nav */
+
+.nav {
+    position: fixed;
+    width: 100%;
+    padding: 20px 0;
+    
+    background-color: var(--navbar-color);
+    color: var(--white);
+    border-bottom: 1px solid var(--darkblue);
+}
+
+.nav-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 30px;
+    font-size: 18px;
+}
+
+.nav-list-link {
+    color: var(--white);
+    transition: 0.2s;
+}
+
+.nav-list-link:hover {
+    opacity: 0.7;
+}
+
+.nav-list-link--active {
+    position: relative;
+}
+
+.nav-list-link--active::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 2px;
+
+    background-color: var(--blue);
+}
+
+/* Logo */
+
+.logo {
+    margin-right: auto;
+    
+    color: var(--white);
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "SUSE", sans-serif;
+    
+    transition: 0.2s;
+}
+
+.logo:hover {
+    color: var(--blue);
+}
+
+.logo strong {
+    font-weight: 700;
+}
+
+/* Header */
+
+.header {
+    padding: 40px 0;
+    min-height: 720px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background-color: var(--header-color);
+    color: var(--white);
+}
+
+.header-wrapper {
+    padding: 0 15px;
+}
+
+.header-wrapper span {
+    color: var(--blue);
+}
+
+.title{
+    margin-bottom: 60px;
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--blue);
+    text-align: center;
+}
+
+.header-title {
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 400;
+
+    font-size: 56px;
+    font-weight: 700;
+}
+
+.header-title em {
+    font-family: "SUSE", sans-serif;
+    font-style: normal;
+    font-size: 72px;
+    font-weight: 700;
+    color: var(--blue);
+}
+
+.header-text {
+    margin-bottom: 80px;
+    font-size: 21px;
+}
+
+
+/* Btn */
+
+.btn {
+    display: inline-block;
+    height: 50px;
+    padding: 14px 28px;
+    border-radius: 9px;
+    background-color: var(--blue);
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 700;
+
+    transition: 0.2s ease-in;
+}
+
+.btn:hover {
+    opacity: 0.7;
+}
+
+.btn:active {
+    background-color: var(--darkblue);
+}
+
+/* Theme button */
+
+.dark-mode-btn {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 51px;
+    padding: 5px;
+
+    border-radius: 50%;
+}
+
+.dark-mode-btn::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 24px;
+    height: 24px;
+
+    border-radius: 50%;
+    background-color: var(--white);
+
+    transition: 0.4s;
+}
+
+.dark-mode-btn--active::before {
+    left: 26px;
+}
+
+.dark-mode-btn-icon {
+    position: relative;
+    width: 16px
+}
+
+/* Section */
+
+.section{
+    padding: 50px 0;
+}
+
+.section-alternative{
+    padding: 100px 0;
+}
+
+.section-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-up-row {
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+}
+
+.section-up-row img{
+    object-fit: cover;
+    border-radius: 8px;
+    max-width: 45%;
+}
+
+.section-text {
+    font-size: 26px;
+}
+
+.section-text span {
+    color: var(--blue);
+    font-weight: 600;
+}
+
+.section-text a{
+    color: var(--blue);
+    font-weight: 600;
+    text-shadow: 1px 1px 4px var(--shadow);
+    transition: 0.2s;
+}
+
+.section-text a:hover {
+    color: var(--darkblue);
+    text-shadow: 0px 0px;
+}
+
+/* Skills */
+
+.content-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    row-gap: 30px;
+}
+
+.title1{
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.content-list-item-row{
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+/* Footer */
+
+.footer {
+    padding: 30px 0;
+    margin-top: auto;
+    background-color: var(--footer-color);
+}
+
+.my-links {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+}
+
+.my-links-item img {
+    width: 34px;
+    filter: invert(1);
+    transition: 0.2s;
+}
+
+.my-links li:nth-child(2) img{
+    width: 46px;
+}
+
+.my-links-item img:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 640px) {
+
+    .header {
+        min-height: 440px;
+        padding: 100px 0 30px 0;
+    }
+
+    .header-title {
+        font-size: 32px;
+    }
+
+    .header-title em {
+        font-size: 38px;
+    }
+
+    .header-text {
+        font-size: 14px;
+    }
+
+    .nav-wrapper {
+        justify-content: space-between;
+    }
+
+    .title {
+        margin-bottom: 30px;
+        font-size: 34px;
+    }
+
+    .section-text {
+        font-size: 16px;
+    }
+
+    .content-list-item-row{
+        font-size: 16px;
+    }
+
+    .title1 {
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+
+    .footer {
+        padding: 20px 0;
+    }
+
+    .footer-wrapper {
+        row-gap: 20px;
+    }
+
+    .my-links {
+        column-gap: 20px;
+    }
+
+    .my-links-item img{
+        width: 28px;
+    }
+
+    .my-links li:nth-child(2) img{
+        width: 40px;
+    }
+    
+
+}
